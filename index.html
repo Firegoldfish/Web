@@ -44,13 +44,13 @@
 </div>
 <script src='https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/markdown-it/12.3.2/markdown-it.min.js'></script>
 <script>
-    if(typeof localStorage.somebottlereadme !== 'undefined') document.querySelector(".markdown-body").innerHTML = localStorage.somebottlereadme;
+    if(typeof localStorage.mocareadme !== 'undefined') document.querySelector(".markdown-body").innerHTML = localStorage.mocareadme;
     fetch("README.md")
         .then((resp) => resp.text())
         .then((resp) => {
             let ready = window.markdownit({ html: true, linkify: true }).render(resp);
             document.querySelector(".markdown-body").innerHTML = ready;
-            localStorage.somebottlereadme = ready;
+            localStorage.mocareadme = ready;
         })
 </script>
 </body>
