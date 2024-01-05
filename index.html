@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="no-referrer" />
+    <link href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/github-markdown-css/5.1.0/github-markdown-dark.css" rel="stylesheet" type="text/css"></link>
+    <style>
+        body {
+            margin: 1em;
+            background-color: #0d1117;
+        }
+
+        img {
+            border-radius: .2em;
+        }
+
+        footer p a {
+            color: rgb(134, 134, 134);
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 870px;
+            margin: 0 auto;
+        }
+
+        .container .h1Title{
+            color: #f7f7f7;
+        }
+    </style>
+    <title>Moca的小站</title>
+</head>
+
+<body>
+<div class="container">
+    <h1 class="h1Title" style="color: #f7f7f7;">
+        Moca的小站
+    </h1>
+    <div class="markdown-body">
+        个人介绍拉取中...
+    </div>
+</div>
+<script src='https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/markdown-it/12.3.2/markdown-it.min.js'></script>
+<script>
+    if(typeof localStorage.somebottlereadme !== 'undefined') document.querySelector(".markdown-body").innerHTML = localStorage.somebottlereadme;
+    fetch("README.md")
+        .then((resp) => resp.text())
+        .then((resp) => {
+            let ready = window.markdownit({ html: true, linkify: true }).render(resp);
+            document.querySelector(".markdown-body").innerHTML = ready;
+            localStorage.somebottlereadme = ready;
+        })
+</script>
+</body>
+</html>
