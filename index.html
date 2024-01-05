@@ -45,7 +45,7 @@
 <script src='https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/markdown-it/12.3.2/markdown-it.min.js'></script>
 <script>
     if(typeof localStorage.mocareadme !== 'undefined') document.querySelector(".markdown-body").innerHTML = localStorage.mocareadme;
-    fetch("README.md")
+    fetch("https://github.com/Firegoldfish/Web/blob/main/README.md")
         .then((resp) => resp.text())
         .then((resp) => {
             let ready = window.markdownit({ html: true, linkify: true }).render(resp);
